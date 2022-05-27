@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="9" time="51.82">
+    <testcase classname="Busqueda en el sitio github" name="Busqueda de la palabra danny-abm con enter en github" time="7.16">
+        <system-out><![CDATA[Given Como usuario navego el sitio web de github............................passed
+When como usuario busco la palabra danny-abm................................passed
+And Como usuario doy enter Git..............................................passed
+Then Espero que se visualize el elemento con el texto danny-abm.............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Busqueda en el sitio github" name="Buscar usuarios con danny-abm" time="0.681">
+        <system-out><![CDATA[And Como usuario doy click en el users......................................passed
+Then Espero que se visualize el elemento con el texto Danny Barton..........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Busqueda en el sitio google" name="Busqueda de la palabra pinguino con el boton buscar en google" time="9.524">
+        <system-out><![CDATA[Given Como usuario nabego el sitio web de google............................passed
+When como usuario busco la palabra pinguino.................................passed
+And Como usuario doy click en el boton buscar...............................passed
+Then Espero que se visualize el elemento con el texto Spheniscidae..........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Busqueda en el sitio google" name="Busqueda de la palabra ping pong al dar enter" time="5.686">
+        <system-out><![CDATA[Given Como usuario nabego el sitio web de google............................passed
+When como usuario busco la palabra ping pong................................passed
+And Como usuario doy enter..................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Busqueda una ciudad de acurdo al estato a que pertenece" name="Testear si se encuentra una ciudad al escribir el estado al que pertenece" time="4.13">
+        <system-out><![CDATA[Given Como usuario navego al sitio web de la lista..........................passed
+When como usuario busco un New York en la lista.............................passed
+Then como usuario encuentro la Yonkers, New York de la lista................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Busqueda una ciudad de acurdo al estato a que pertenece" name="Testear si se encuentra una ciudad al escribir el estado al que pertenece 2" time="6.604">
+        <system-out><![CDATA[Given Como usuario navego al sitio web de la lista..........................passed
+When como usuario busco un California en la lista...........................passed
+Then como usuario encuentro la Oakland, California de la lista..............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Vamos a realizar test a una tabla estatica" name="Validar el valor que retorna la celda fila 5 columna 2" time="9.104">
+        <system-out><![CDATA[Given Navego al sitio web de la tabla estatica..............................passed
+Then Retorno el valor de la celda fila 5 columna 2..........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Vamos a realizar test a una tabla estatica" name="Validar que la tabla se muestre en la pagina" time="2.26">
+        <system-out><![CDATA[Given Navego al sitio web de la tabla estatica..............................passed
+Then Como usuario valido si la tabla se muestra en la pagina................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Vamos a realizar test a una tabla estatica" name="Modificar el valor de la celda fila 4 columna 1" time="6.47">
+        <system-out><![CDATA[Given Navego al sitio web de la tabla estatica..............................passed
+When Como usuario modifico el valor de la celda.............................passed
+Then Como usuario valido el nuevo valor de la celda.........................passed
+]]></system-out>
+    </testcase>
+</testsuite>

@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+
+group = "CucumberBDD"
+version = "1.0-SNAPSHOT"
+
+sourceCompatibility = 17
+
+repositories {
+  
+    mavenCentral()  
+   
+}
+
+dependencies {
+implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.4'
+// https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.3.4'
+// https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
+testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.3.4'
+// https://mvnrepository.com/artifact/tech.grasshopper/cucumber-pdf-report
+implementation group: 'tech.grasshopper', name: 'cucumber-pdf-report', version: '2.8.1'
+}

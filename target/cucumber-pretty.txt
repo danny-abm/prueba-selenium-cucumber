@@ -1,0 +1,51 @@
+
+@Git
+Scenario: Busqueda de la palabra danny-abm con enter en github    # src/test/resource/features/Github.feature:3
+  Given Como usuario navego el sitio web de github                # steps.GithubSteps.navegarAGithub()
+  When como usuario busco la palabra danny-abm                    # steps.GithubSteps.escribirCriterioBusqueda()
+  And Como usuario doy enter Git                                  # steps.GithubSteps.pressEnterG()
+  Then Espero que se visualize el elemento con el texto danny-abm # steps.GithubSteps.obtenerTextoDeBusqueda()
+
+@Git
+Scenario: Buscar usuarios con danny-abm                              # src/test/resource/features/Github.feature:10
+  And Como usuario doy click en el users                             # steps.GithubSteps.clickBotonUsers()
+  Then Espero que se visualize el elemento con el texto Danny Barton # steps.GithubSteps.obtenerTextoUser()
+
+Scenario: Busqueda de la palabra pinguino con el boton buscar en google # src/test/resource/features/Google.feature:6
+  Given Como usuario nabego el sitio web de google                      # steps.GoogleSteps.navegarAGoogle()
+  When como usuario busco la palabra pinguino                           # steps.GoogleSteps.escribirCriterioBusqueda()
+  And Como usuario doy click en el boton buscar                         # steps.GoogleSteps.clickBotonBusqueda()
+  Then Espero que se visualize el elemento con el texto Spheniscidae    # steps.GoogleSteps.obtenerTextoDeBusqueda()
+
+Scenario: Busqueda de la palabra ping pong al dar enter # src/test/resource/features/Google.feature:11
+  Given Como usuario nabego el sitio web de google      # steps.GoogleSteps.navegarAGoogle()
+  When como usuario busco la palabra ping pong          # steps.GoogleSteps.escribirPingPong()
+  And Como usuario doy enter                            # steps.GoogleSteps.pressEnter()
+
+@List
+Scenario Outline: Testear si se encuentra una ciudad al escribir el estado al que pertenece # src/test/resource/features/ListaPage.feature:11
+  Given Como usuario navego al sitio web de la lista                                        # steps.ListSteps.navegarSitio()
+  When como usuario busco un New York en la lista                                           # steps.ListSteps.escribirBusqueda(java.lang.String)
+  Then como usuario encuentro la Yonkers, New York de la lista                              # steps.ListSteps.validaElementos(java.lang.String)
+
+@List
+Scenario Outline: Testear si se encuentra una ciudad al escribir el estado al que pertenece # src/test/resource/features/ListaPage.feature:12
+  Given Como usuario navego al sitio web de la lista                                        # steps.ListSteps.navegarSitio()
+  When como usuario busco un California en la lista                                         # steps.ListSteps.escribirBusqueda(java.lang.String)
+  Then como usuario encuentro la Oakland, California de la lista                            # steps.ListSteps.validaElementos(java.lang.String)
+
+@Table
+Scenario: Validar el valor que retorna la celda fila 5 columna 2 # src/test/resource/features/Table.feature:7
+  Given Navego al sitio web de la tabla estatica                 # steps.TableSteps.navegarSitioTabla()
+  Then Retorno el valor de la celda fila 5 columna 2             # steps.TableSteps.obtenerValorTabla()
+
+@Table
+Scenario: Validar que la tabla se muestre en la pagina         # src/test/resource/features/Table.feature:10
+  Given Navego al sitio web de la tabla estatica               # steps.TableSteps.navegarSitioTabla()
+  Then Como usuario valido si la tabla se muestra en la pagina # steps.TableSteps.validarTablaMuestra()
+
+@Table
+Scenario: Modificar el valor de la celda fila 4 columna 1 # src/test/resource/features/Table.feature:13
+  Given Navego al sitio web de la tabla estatica          # steps.TableSteps.navegarSitioTabla()
+  When Como usuario modifico el valor de la celda         # steps.TableSteps.modificarCelda()
+  Then Como usuario valido el nuevo valor de la celda     # steps.TableSteps.validarModificacionCelda()
