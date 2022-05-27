@@ -11,7 +11,7 @@ import pages.BasesPage;
 @CucumberOptions(
     features = "src/test/resource/features",
     glue = "steps",
-   
+    tags = "@Hover",
     plugin = { "html:target/cucumber-html-report.html",
     "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
     "usage:target/cucumber-usage.json", "junit:target/cucumber-results.xml"},

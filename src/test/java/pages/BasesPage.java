@@ -10,11 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.idealized.Javascript;
+
 import org.openqa.selenium.interactions.Actions;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.tlh.vaj;
 
 
 public class BasesPage {
@@ -22,6 +24,7 @@ public class BasesPage {
     protected static WebDriver driver;
     private static WebDriverWait wait;
     private static Actions action;
+    private static JavascriptExecutor jse;
 
     static {
 
@@ -88,15 +91,17 @@ public class BasesPage {
     public void setValueFromTable(String locator, int row, int column, String value){
         String cell=locator + "/table/tbody/tr["+ row +"]/td["+ column +"]";
         WebElement cellElement = find(cell);
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].innerHTML='"+ value +"';",cellElement);
         
 
     }
 
+
     public Boolean validateExistElement(String locator){
 
         return find(locator).isDisplayed();
+        
 
     }
 
@@ -104,6 +109,12 @@ public class BasesPage {
         return  driver.findElements(By.className(locator));
     }
 
+    public void hoverElement(String locator){
+        WebElement element = find(locator);
+        action= new Actions(driver);
+        action.moveToElement(element).perform();
+    }
+       
     
 }
 
